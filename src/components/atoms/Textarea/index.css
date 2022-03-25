@@ -1,0 +1,6 @@
+.textarea textarea {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid var(--soft-grey);
+  margin-top: 2px;
+}

@@ -1,0 +1,34 @@
+.card {
+  margin-bottom: 24px;
+  background-color: var(--dark-grey);
+}
+
+.card .card-img img {
+  width: calc(100% - 16px);
+  margin: 8px;
+}
+
+.card .card-title {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 8px 0 16px;
+}
+
+.card .card-button-container {
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.card .card-button-container .card-button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.card .card-button-container .card-button.ml {
+  margin-left: 4px;
+}
+
+.card .card-button-container .card-button.mr {
+  margin-right: 4px;
+}

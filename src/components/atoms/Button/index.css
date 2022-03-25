@@ -1,0 +1,19 @@
+.button button {
+  width: 130px;
+  height: 38px;
+  color: var(--dark-red);
+  background-color: white;
+  box-shadow: none;
+  border-radius: 3px;
+  border-width: 0;
+}
+
+.button.red button {
+  color: white;
+  background-color: var(--dark-red);
+}
+
+.button.disabled button {
+  color: white;
+  background-color: var(--light-red);
+}
