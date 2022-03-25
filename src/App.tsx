@@ -50,6 +50,7 @@ function App() {
       )
       .then(() => alert("Personaje añadido exitosamente"))
       .catch((e) => alert(e.response.data.message));
+    handleCancel();
   };
 
   const handleDelete = async (characterId: string) => {
@@ -146,7 +147,7 @@ function App() {
               <button
                 id="searchButton"
                 onClick={handleAddCharacter}
-                disabled={true}
+                disabled={invalid}
               >
                 <AiOutlineSave /> Guardar
               </button>
