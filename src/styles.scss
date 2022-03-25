@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+input {
+    width: 100%;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    outline: none !important;
+    outline-width: 0 !important;
+
+    &:focus {
+      border: 2px solid red !important;
+    }
+  }

@@ -1,0 +1,63 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  color: black;
+  border: 2px solid lightgrey;
+  background-color: white;
+  width: 70%;
+  text-align: center;
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    button {
+      display: flex;
+      width: 30%;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 1rem 2rem;
+      box-sizing: border-box;
+
+      outline: none;
+      border: none;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: rgba(255, 0, 0, 0.5);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    direction: ltr;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    label {
+      text-align: start;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .title {
+    color: grey;
+    font-weight: bold;
+  }
+
+  .mr-8 {
+    margin-right: 0.5rem;
+  }
+}

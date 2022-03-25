@@ -1,0 +1,45 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: black;
+  width: 70%;
+
+  .img-container {
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .card-content {
+    text-align: center;
+    color: white;
+    padding: 0 1rem 1rem 1rem;
+    box-sizing: border-box;
+
+    .buttons-container {
+      display: flex;
+      justify-content: center;
+
+      button {
+        width: 40%;
+        background-color: white;
+        color: red;
+        font-size: 20px;
+        border-radius: 4px;
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mr-8 {
+    margin-right: 0.5rem;
+  }
+}
