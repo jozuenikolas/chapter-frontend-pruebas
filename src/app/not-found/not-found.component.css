@@ -1,0 +1,11 @@
+h1 {
+    color: gray;
+    text-align: center;
+    font-size: 45px;
+}
+.not-found{
+    text-align: center;
+}
+span {
+    background-image: url(src\assets\error.jpg);
+}

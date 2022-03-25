@@ -1,0 +1,16 @@
+<div class="content">
+    <h1>Eliminar Personaje:</h1>
+    
+    <table id="customers">
+      <tr>
+        <td>{{ Personaje.Nombre.id }}</td>
+        <td>{{ Personaje.descripcion.id }}</td>
+        <td>{{ Personaje.Imagem.id }}</td>
+      </tr>
+      <tr *ngFor="let customer of data['message']['res']">
+        <td>{{ <Personaje class="Nombre"></Personaje> }}</td>
+        <td>{{ <Personaje class="Descripcion"></Personaje> }}</td>
+        <td>{{ <Personaje class="Imagem"></Personaje> }}</td>
+      </tr>
+    </table>
+    </div>
