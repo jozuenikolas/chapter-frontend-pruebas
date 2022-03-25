@@ -41,4 +41,13 @@ ngOnInit(): void {
   SearchForm(f:NgForm){
 
   }
+
+
+  Actualizar(){
+
+  }
+
+  Borrar(){
+    
+  }
 }
