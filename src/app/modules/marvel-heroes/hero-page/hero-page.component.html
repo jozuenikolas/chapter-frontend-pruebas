@@ -8,9 +8,10 @@
             class="flex-1 border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
             type="search"
             name="search"
-            placeholder="Buscar Personaje"
+            [(ngModel)]="searchText"
+            placeholder="Escribe tu Personaje y Da click en la lupa"
           />
-          <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+          <button class="absolute right-0 top-0 mt-5 mr-4" (click)="search()">
             <svg
               class="text-gray-600 h-4 w-4 fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +58,7 @@
 
   <section class="w-full container mx-auto grid grid-cols-4 gap-4">
     <app-hero-card
-      *ngFor="let item of marvelHeroes"
+      *ngFor="let item of marvelFilteredHeroes"
       [hero]="item"
     ></app-hero-card>
   </section>

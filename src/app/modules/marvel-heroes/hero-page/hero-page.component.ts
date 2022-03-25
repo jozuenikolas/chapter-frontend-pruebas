@@ -9,6 +9,8 @@ import { HeroesService } from '@app/services/marvel.service';
 })
 export class HeroPageComponent implements OnInit {
   marvelHeroes: MarvelHero[] = [];
+  marvelFilteredHeroes: MarvelHero[] = [];
+  searchText: string = '';
   constructor(private heroesService: HeroesService) {
     this.getPageData();
   }
@@ -17,6 +19,15 @@ export class HeroPageComponent implements OnInit {
   getPageData() {
     this.heroesService.getAllHeroesList(1).subscribe((listScore) => {
       this.marvelHeroes = listScore;
+      this.marvelFilteredHeroes = listScore;
+    });
+  }
+  search() {
+    this.marvelFilteredHeroes = this.marvelHeroes;
+    this.marvelFilteredHeroes = this.marvelHeroes.filter((hero) => {
+      return JSON.stringify(hero)
+        .toLowerCase()
+        .includes(this.searchText.toLowerCase());
     });
   }
 }
