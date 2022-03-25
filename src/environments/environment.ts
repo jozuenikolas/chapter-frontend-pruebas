@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  idAuthor: '18',
+  apiUrl: 'https://bp-marvel-api.herokuapp.com/marvel-characters'
 };
 
 /*

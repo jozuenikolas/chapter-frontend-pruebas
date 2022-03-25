@@ -1,0 +1,13 @@
+.home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 390px;
+    padding: 24px 12px 12px 12px;
+
+    &__header {
+        margin-bottom: 24px;
+    }
+}
