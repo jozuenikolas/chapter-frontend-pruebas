@@ -1,0 +1,95 @@
+
+<body class="bg-light">
+    <nav style="color: white; " class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+        Marvel Characters
+      </nav>
+    <div class="container">       
+      
+        <div style="margin-top: 25px;" class="row">
+            <div class="col-md-8 order-md-1">
+                <form class="needs-validation" (ngSubmit)="SearchForm(s.value)" #s="ngForm" ngModel>
+                    <div class="row">
+                        <div class="col-md-6 mb-3 input-group" >
+                            <input name="Buscar"type="text" class="form-control" placeholder="Buscar" required ngModel>
+                            <button class="btn btn-success" >Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+<!-- form nuevo
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+                <form class="needs-validation" (ngSubmit)="MarvelForm(s)" #s="ngForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3 input-group" >
+                            <button class="btn btn-info marBut" type="submit">+ Nuevo</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Add Nuevo</h4>
+                <form class="needs-validation" (ngSubmit)="create(f)" #f="ngForm" ngModel>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Nombre">Nombre</label>
+                            <input type="text" class="form-control" name="Nombre" placeholder="" value="" required ngModel>
+                            <div class="invalid-feedback">
+                                Valid Nombre is required.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="Descripcion">Descripcion</label>
+                            <input type="text" class="form-control" name="Descripcion" placeholder="" value="" required ngModel>
+                            <div class="invalid-feedback">
+                                Valid Descripcion is required.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Imagen">Imagen</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <input type="text" class="form-control" name="Imagen" placeholder="URL" required ngModel>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Imagen is required.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success marBut" >Guardar</button>
+                    <button class="btn btn-danger marBut" type="reset">Cancelar</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <button class="btn btn-success marBut" type="button" (click)="Marvelget()">Listado Personaje</button>
+            <div *ngFor="let marvel of MarvelData" >
+             </div>
+        </div>
+        <div  *ngFor="let marvel of MarvelData"  class="card marp" style="width: 18rem;">
+            <img class="card-img-top" [src]=marvel.image alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{marvel.title}}</h5>
+              <p class="card-text">{{marvel.title}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{marvel.body}}</li>
+              <li class="list-group-item">{{marvel.category}}</li>
+              <li class="list-group-item">{{marvel.createdAt}}</li>
+              <li class="list-group-item">{{marvel.updatedAt}}</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="card-link">{{marvel.image}}</a>
+            </div>
+          </div>
+    </div>
+</body>
