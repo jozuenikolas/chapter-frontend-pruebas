@@ -1,0 +1,38 @@
+module.exports = {
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.{js,jsx,ts,tsx}',
+    '!**/*.config.{js,jsx,ts,tsx}',
+    '!**/node_modules/**',
+    '!**/.next/**',
+    '!**/coverage/**',
+    '!**/build/**',
+    '!**/database/**',
+    '!**/pages/api/**',
+    '!**/styles.{js,jsx,ts,tsx}',
+    '!**/pages/_document.tsx',
+    '!**/pages/_app.tsx',
+    '!**/src/shared/svg/**',
+    '!**/src/shared/styles/**',
+    '!**/public/**',
+  ],
+  moduleNameMapper: {
+    '@atoms/(.*)': '<rootDir>/src/components/atoms/$1',
+    '@molecules/(.*)': '<rootDir>/src/components/molecules/$1',
+    '@organisms/(.*)': '<rootDir>/src/components/organisms/$1',
+    '@database/(.*)': '<rootDir>/database/$1',
+    '@svg/(.*)': '<rootDir>/src/shared/svg/$1',
+    '@hooks/(.*)': '<rootDir>/src/shared/hooks/$1',
+    '@context/(.*)': '<rootDir>/src/shared/context/$1',
+    '@shared/(.*)': '<rootDir>/src/shared/$1',
+    '\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/src/__test__/__mocks__/filemock.js',
+  },
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  testPathIgnorePatterns: ['<rootDir>/.next/'],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
+  },
+  moduleDirectories: ['node_modules', 'src'],
+  transformIgnorePatterns: ['^.+\\.module\\.(css|sass|scss)$'],
+}
