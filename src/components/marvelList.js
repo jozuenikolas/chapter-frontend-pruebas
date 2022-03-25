@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, FlatList, Image } from "react-native";
+import { View, Text, FlatList, Image, ScrollView } from "react-native";
 import styles from "./marvelList.styles";
 
 const ID_AUTHOR = 10;
@@ -9,6 +9,7 @@ class MarvelList extends React.Component {
     super(props);
     this.state = {
       list: [],
+      listFiltered: [],
     };
   }
 
@@ -20,9 +21,25 @@ class MarvelList extends React.Component {
       .then((responseJson) => this.setState({ list: responseJson }));
   }
 
+  getComicsFiltered() {
+    const { textForSearch } = this.props;
+    fetch(
+      `https://bp-marvel-api.herokuapp.com/marvel-characters?idAuthor=${ID_AUTHOR}&title=${textForSearch}`
+    )
+      .then((response) => response.json())
+      .then((responseJson) => this.setState({ listFiltered: responseJson }));
+  }
+
   getData() {
-    const { list } = this.state;
-    return list;
+    const { textForSearch } = this.props;
+    const { list, listFiltered } = this.state;
+
+    if (!textForSearch.length) {
+      return list;
+    }
+
+    this.getComicsFiltered();
+    return listFiltered;
   }
 
   renderItem({ item }) {
@@ -38,7 +55,7 @@ class MarvelList extends React.Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <FlatList
           data={this.getData()}
           numColumns={2}
@@ -46,7 +63,7 @@ class MarvelList extends React.Component {
           ItemSeparatorComponent={() => <View style={{ height: 15 }} />}
           renderItem={this.renderItem}
         />
-      </View>
+      </ScrollView>
     );
   }
 }

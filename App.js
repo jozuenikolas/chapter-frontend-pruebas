@@ -1,12 +1,22 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 import MarvelList from "./src/components/marvelList";
 
 export default function App() {
+  const [textForSearch, setTextForSearch] = useState("");
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Listado de personajes</Text>
-      <MarvelList />
+      <View style={{ paddingBottom: 16 }}>
+        <TextInput
+          style={styles.search}
+          value={textForSearch}
+          onChangeText={(value) => setTextForSearch(value)}
+          placeholder="Buscar"
+        />
+      </View>
+      <MarvelList textForSearch={textForSearch} />
     </View>
   );
 }
@@ -22,5 +32,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
     marginBottom: 16,
+  },
+  search: {
+    backgroundColor: "#fff",
   },
 });
