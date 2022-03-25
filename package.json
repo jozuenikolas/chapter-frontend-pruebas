@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^9.1.0",
+    "node-fetch": "^3.2.3",
     "react": "17.0.2",
     "react-native": "0.67.4"
   },

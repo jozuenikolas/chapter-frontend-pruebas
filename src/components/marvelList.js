@@ -104,6 +104,7 @@ class MarvelList extends React.Component {
     return (
       <ScrollView>
         <FlatList
+          testID="marvel-list"
           data={this.getData()}
           numColumns={2}
           columnWrapperStyle={{ justifyContent: "space-between" }}
