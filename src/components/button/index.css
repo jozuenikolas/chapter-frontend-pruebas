@@ -1,0 +1,14 @@
+.size {
+  padding: 24px;
+  display: flex;
+}
+.size-button {
+  margin-left: auto;
+  height: 30px;
+  width: 40%;
+  background-color: #ff3333;
+  border-radius: 6px;
+  width: 100px;
+  height: 40px;
+  color: white;
+}

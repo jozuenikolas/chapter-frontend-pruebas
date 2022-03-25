@@ -1,0 +1,39 @@
+.container {
+  max-width: 100%;
+  padding: 24px;
+  color: #4a5555;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 27px;
+  text-align: -webkit-center;
+}
+
+.size-input {
+  width: 300px;
+  margin-bottom: 15px;
+  height: 35px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.descripcion {
+  padding-left: 12px;
+  padding-bottom: 7px;
+  text-align: initial;
+  color: #3b3b3b;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+
+.buttons {
+
+  background-color: #ff3333;
+  border-radius: 6px;
+  width: 100px;
+  height: 40px;
+  color: white;
+}
