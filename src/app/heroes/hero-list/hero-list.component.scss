@@ -1,0 +1,56 @@
+/* Import the google web fonts you want to use */
+
+@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
+/* Card Based Layout - Base styles */
+
+body {
+  background: hsl(0, 0%, 90%);
+}
+
+img {
+  
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  background: black;
+  margin-bottom: 2em;
+  
+}
+
+.card a {
+  color: white;
+  text-decoration: none;
+}
+
+.card a:hover {
+  box-shadow: 3px 3px 8px hsl(0, 0%, 80%);
+}
+
+.card-content {
+  padding: 1.4em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+
+
+
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+}
+
+.centered {
+ text-align: center;
+}
+.white{
+    color: white;
+}

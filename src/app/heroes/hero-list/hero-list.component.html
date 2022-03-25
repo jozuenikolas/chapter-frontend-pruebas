@@ -1,0 +1,39 @@
+
+ <div class="centered">
+    Listado de personajes
+</div>
+<div class="centered">
+    <input type="text" placeholder="Buscar"  (ngModelChange)="filterHero()" [(ngModel)]="filterText" >
+    <button (click)="addNewHero()">Nuevo</button>
+</div>
+<main class="main-area">
+   
+    
+    <div class="centered">
+
+        <section class="cards">
+            
+            <article class="card" *ngFor="let hero of heroes" >
+                
+                    <picture >
+                        <img [src]="hero.image">
+                    </picture>
+                    <div>
+                        <div class="centered white">
+                            {{hero.title}}
+                        </div>
+                       <button (click)="editHero(hero)">Edit</button>
+                       <button (click)="deleteHero(hero)">Delete</button>
+                    </div><!-- .card-content -->
+               
+            </article><!-- .card -->
+
+           
+
+            
+
+        </section><!-- .cards -->
+       
+    </div><!-- .centered -->
+    
+</main>
