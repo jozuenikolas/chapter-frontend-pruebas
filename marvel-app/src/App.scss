@@ -1,0 +1,102 @@
+.main-container {
+  max-width: 375px;
+  margin: 0 auto;
+
+  input, textarea {
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+
+    &.error {
+      border-color: red !important;
+    }
+
+    &.normal {
+      border-color: gray;
+    }
+
+  }
+
+  .title {
+    color: gray;
+  }
+
+  .search-add {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .search {
+    input {
+      padding-left: 25px;
+      background: url("assets/icons/searchIcon.png") no-repeat left;
+      background-size: 1rem;
+    }
+  }
+
+  button {
+    width: 8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+
+    &.danger {
+      background-color: red !important;
+      border-color: red;
+      color: white;
+    }
+
+    &.primary {
+      background-color: whitesmoke;
+      color: red;
+    }
+  }
+
+  .controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    height: 2.5rem;
+    button {
+      width: 47%
+    }
+  }
+
+  .form {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: solid 1px gray;
+    border-radius: 0.25rem;
+
+    h1 {
+      text-align: center;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .characters {
+    margin-top: 1rem;
+  }
+  
+  .character-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    color: white;
+    background-color: black;
+
+    .name {
+      text-align: center;
+    }
+
+    img {
+      max-width: 343px;
+    }
+  }
+
+
+
+}
