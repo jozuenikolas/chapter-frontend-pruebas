@@ -1,0 +1,21 @@
+<div class="card-container">
+  <div class="card">
+    <div class="img-container">
+      <img [src]="hero.image" alt="heroImage" style="width: 100%" />
+    </div>
+
+    <div class="card-content">
+      <p>
+        <b>{{ hero.title }}</b>
+      </p>
+      <div class="buttons-container">
+        <button (click)="onClickDelete()">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+        <button class="mr-8" (click)="onClickEdit()">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="page-container">
+  <h1>Listado de personajes</h1>
+
+  <div class="search-bar-container">
+    <input
+      type="text"
+      placeholder="Buscar"
+      name="search"
+      [(ngModel)]="searchHeroText"
+    />
+    <button type="submit" (click)="showHeroForm()">+ Nuevo</button>
+  </div>
+
+  <div class="heroes-container">
+    <app-hero-form
+      *ngIf="isShowingHeroForm"
+      (onSubmitSucces)="onSaveFormSuccess($event)"
+      (onCancel)="hideHeroForm()"
+      [hero]="currentSelectedHero"
+    ></app-hero-form>
+    <app-hero-card
+      *ngFor="let hero of heroes | heroFilter: searchHeroText"
+      [hero]="hero"
+      (onEmitHeroToEdit)="setCurrentHero($event)"
+      (onDeleteSucces)="onDeleteSuccess($event)"
+    ></app-hero-card>
+  </div>
+</div>

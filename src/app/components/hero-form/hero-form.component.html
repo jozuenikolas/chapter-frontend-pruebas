@@ -1,0 +1,34 @@
+<div class="card-container">
+  <div class="card">
+    <h2 class="title">Nuevo Personaje</h2>
+    <form [formGroup]="heroForm">
+      <label for="heroName">Nombre:</label>
+      <input type="text" id="heroName" formControlName="title" />
+
+      <label for="heroDescription">Descripción:</label>
+      <input type="text" id="heroDescription" formControlName="body" />
+
+      <label for="heroImage">Imagen:</label>
+      <input
+        type="text"
+        id="heroImage"
+        placeholder="URL"
+        formControlName="image"
+      />
+
+      <div class="buttons-container">
+        <button
+          type="button"
+          (click)="submitForm()"
+          class="mr-8"
+          [disabled]="isButtonDisabled"
+        >
+          <i class="fa fa-floppy-o mr-8" aria-hidden="true"></i> Guardar
+        </button>
+        <button (click)="cancel()">
+          <i class="fa fa-times mr-8" aria-hidden="true"></i> Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
