@@ -1,0 +1,36 @@
+<div class="w-100 h-100 bg-pattern" *ngIf="form">
+    <div class="row justify-content-center">
+        <div class="row text-center">
+          <div class="col-12">           
+          </div>
+        </div>
+        <div class="row text-center mt-4">
+          <h2 class="m-0">LISTADO PERSONAJES</h2>          
+        </div>
+        <div class="row">         
+            <div class="row">              
+                <label>BUSCAR</label>
+                <input formControlName="NOMBRE" matInput required>        
+            </div>
+            <div class="row">
+              <button mat-raised-button type="button">
+                NUEVO
+              </button>
+            </div>
+
+            <div class="row">
+                <button mat-raised-button type="button">
+                  EDITAR
+                </button>
+              </div>
+              <div class="row">
+                <button mat-raised-button type="button">
+                  ELIMINAR
+                </button>
+              </div>
+         
+        </div>   
+    </div>
+  
+  </div>
+  
