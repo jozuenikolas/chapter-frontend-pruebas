@@ -33,6 +33,7 @@ function App() {
     setCharacterName("");
     setCharacterDescription("");
     setCharacterImage("");
+    setUpdate("");
   };
   const handleAddCharacter = async () => {
     await axios
