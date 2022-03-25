@@ -1,0 +1,52 @@
+
+<div  class="content-wrapper">
+ <div class="person-container">
+   <div class="person-list">
+     <p class="title">Listado de personajes</p>
+     <p>
+       <input type="text" placeholder="Buscar">
+       <button>Nuevo</button>
+     </p>
+   </div>
+   <div class="person-list">
+    <p class="title">Listado de personajes</p>
+    <p>
+      <input type="text" placeholder="Buscar">
+      <button>Nuevo</button>
+    </p>
+  </div>
+   <div></div>
+ </div>
+ <div class="person-detail">
+   <div class="person-img">
+     <!-- <img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/003cap_ons_crd_03.jpg"/> -->
+     <img src="selectedCharacter.image">
+     <button>Edit</button>
+     <button>Delete</button>
+   </div>
+   <div class="person-desc">
+     <form [formGroup]="superCharctrForm" (ngSubmit)="addUpdateCharctr()">
+     <p class="title">Nuevo personaje</p>
+     <ul>
+       <li>
+         <label for="">Nombre:</label>
+         <input type="text" placeholder="Nombre" formControlName="name">
+       </li>
+       <li>
+        <label for="">Description:</label>
+        <textarea type="text" placeholder="Description" formControlName="desc"></textarea>
+      </li>
+      <li>
+        <label for="">Imagen:</label>
+        <input type="text" placeholder="Imagen" formControlName="image">
+      </li>
+     </ul>
+     </form>
+   </div>
+   <div>
+     <div *ngFor="let characters of superCharacters" (click)="">
+       <img src="{{characters.image}}">   
+     </div>
+   </div>
+ </div>
+</div>
