@@ -1,0 +1,31 @@
+#ct-input-container{
+    display: flex;
+    align-items: center;
+    border-color: #b7b7b9;
+    border: 1px solid var(--darkGrey300);
+    border-radius: 4px;
+    background-color: white;
+
+    &:focus {
+        border: 2px solid var(--danger);
+    }
+}
+
+#ct-input{
+    width: calc(100% - 34px);
+    height: 44px;
+    outline:none !important;
+    outline-width: 0 !important;
+            box-shadow: none;
+       -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+  
+    background-color: transparent;
+    border: 0px;
+    padding-right: 16px;
+  
+    font-size: 16px;
+    font-family: prelo-medium, Helvetica, Arial, Sans, Sans-serif;
+    font-weight: 100;
+    color: var(--darkGrey500);
+}
