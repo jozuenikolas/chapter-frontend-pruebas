@@ -1,0 +1,22 @@
+<div>
+    <div *ngFor="let heroe of listaHeroes; let i = index">
+        <article>
+            <h2>
+                <strong>
+                    <span>{{heroe.title}}</span>
+                </strong>
+            </h2>
+            <div>
+                <div>
+                    <img alt="" class="image" src={{heroe.image}}>
+                    <button class="button">Editar</button>&nbsp;&nbsp;
+                    <button class="button">Eliminar</button>
+                </div>
+                <div>
+                    {{heroe.body}}
+                </div>
+                <hr/>
+            </div>
+        </article>
+    </div>
+</div>
