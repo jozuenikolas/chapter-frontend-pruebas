@@ -1,0 +1,6 @@
+module Pods_chapterFrontPruebas {
+  umbrella header "Pods-chapterFrontPruebas-umbrella.h"
+
+  export *
+  module * { export * }
+}

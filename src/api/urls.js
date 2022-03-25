@@ -1,0 +1,1 @@
+export const MARVEL_CHARACTERS_URL = 'https://bp-marvel-api.herokuapp.com/marvel-characters';
