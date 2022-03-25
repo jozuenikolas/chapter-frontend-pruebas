@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
-import { getCharacters, getAuthor, deleteUser } from "../../endpoints";
+import {
+  getCharacters,
+  getAuthor,
+  deleteUser,
+  createUser,
+} from "../../endpoints";
 import Button from "../atoms/Button";
 import { CardComic } from "../atoms/CardComic";
 import Input from "../atoms/Input";
@@ -15,11 +22,18 @@ const Wrapper = styled.div`
   padding: 1vmin;
 `;
 export const Principal = () => {
+  const history = useNavigate();
+
   const [characters, setCharacters] = useState([]);
   const [user, setUser] = useState("");
   const [active, setActive] = useState(false);
+  const [create, setCreate] = useState(false);
   const [id, setId] = useState("");
   const [index, setIndex] = useState();
+
+  const [name, setName] = useState();
+  const [descriptions, setDescription] = useState();
+  const [url, setUrl] = useState();
 
   useEffect(() => {
     getAllUsers();
@@ -38,7 +52,6 @@ export const Principal = () => {
   const getUsers = async () => {
     try {
       const userGit = await getAuthor(user);
-      console.log("userGit", userGit);
       setCharacters(userGit.data);
       //   setLoading(false);
     } catch (e) {
@@ -62,9 +75,29 @@ export const Principal = () => {
     try {
       const response = await deleteUser(id);
       handleRemove(index);
-      setActive(!active)
+      setActive(!active);
     } catch (e) {
       console.warn(e);
+    }
+  };
+  const createUsers = async () => {
+    try {
+      const data = {
+        title: name,
+        body: descriptions,
+        image: url,
+        category: "main",
+        idAuthor: "5",
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      };
+      const response = await createUser(data);
+      characters.push(data);
+      setCharacters([...characters]);
+
+      setCreate(false);
+    } catch (e) {
+      console.log("err", e);
     }
   };
 
@@ -80,23 +113,41 @@ export const Principal = () => {
         <Button onClick={() => getUsers()} style={{ marginLeft: "30px" }}>
           Buscar
         </Button>
+        <Button onClick={() => setCreate(true)}>Crear</Button>
       </div>
-      <Wrapper>
-        {characters.map((char, i) => (
-          <CardComic
-            src={char.image}
-            name={char.title}
-            key={i}
-            id={char._id}
-            deleteUser={() => {
-              setId(char._id);
-              setActive(!active);
-              setIndex(i);
-            }}
+      {!create ? (
+        <Wrapper>
+          {characters.map((char, i) => (
+            <CardComic
+              src={char.image}
+              name={char.title}
+              key={i}
+              id={char._id}
+              deleteUser={() => {
+                setId(char._id);
+                setActive(!active);
+                setIndex(i);
+              }}
+            />
+          ))}
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <Input placeholder="Nombre" onChange={(e) => setName(e)} />
+          <Input
+            placeholder="Descripción"
+            onChange={(e) => setDescription(e)}
           />
-        ))}
-      </Wrapper>
-      <Modal active={active} deleteUser={deleteComic} />
+          <Input placeholder="Imagen URL" onChange={(e) => setUrl(e)} />
+          <Button onClick={() => createUsers()}>Guardar</Button>
+        </Wrapper>
+      )}
+
+      <Modal
+        active={active}
+        deleteUser={deleteComic}
+        handleOpen={() => setActive(!active)}
+      />
     </BasicLayout>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import FadeAnimation from "../atoms/FadeAnimation";
 import Button from "./Button";
@@ -55,21 +55,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function useLockBodyScroll() {
-  useEffect(() => {
-    // Get original body overflow
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    // Prevent scrolling on mount
-    document.body.style.overflow = "hidden";
-
-    // Re-enable scrolling when component unmounts
-    return () => (document.body.style.overflow = originalStyle);
-  }, []); // Empty array ensures effect is only run on mount and unmount
-}
-
 const Modal = (props) => {
-  //   props.active && useLockBodyScroll()
-
   return (
     <Wrapper active={props.active} shadow={props.shadow}>
       <div className="box">

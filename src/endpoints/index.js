@@ -6,3 +6,5 @@ export const getCharacters = async() => await axios.get(data + `marvel-character
 export const getAuthor = async(search) => axios.get(data + `marvel-characters?idAuthor=1&title=${search}`);
 
 export const deleteUser = async (id) => axios.delete(data +`marvel-characters/${id}?idAuthor=5`)
+
+export const createUser = async (data) => axios.post('https://bp-marvel-api.herokuapp.com/marvel-characters?idAuthor=5', {...data})
