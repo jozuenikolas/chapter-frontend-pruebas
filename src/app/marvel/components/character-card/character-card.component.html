@@ -1,0 +1,20 @@
+<div class="character-card">
+  <div class="character-card__card">
+    <div class="character-card__image">
+      <img [src]="character.image" alt="image" />
+    </div>
+    <h4 class="character-card__name">{{ character.title }}</h4>
+    <div class="character-card__actions">
+      <app-button
+        [icon]="icons.EDIT"
+        type="EDIT"
+        (handleEmit)="handleCharacter($event)"
+      ></app-button>
+      <app-button
+        [icon]="icons.DELETE"
+        type="DELETE"
+        (handleEmit)="handleCharacter($event)"
+      ></app-button>
+    </div>
+  </div>
+</div>
