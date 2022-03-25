@@ -1,0 +1,45 @@
+<td>
+  <input type="text"
+         class="form-control"
+         #buscador
+         style="font-family: Arial, 'Font Awesome 5 Free'"
+         placeholder="&#xF002; Buscar"
+         (change)="buscar()">
+</td>
+<td>
+  <button type="button" class="btn btn-primary" (click)="cambiarEstado(true)">
+    <i class="fas fa-plus"></i> Nuevo
+  </button>
+</td>
+
+<div class="container pt-4" *ngIf="mostrarFormulario">
+  <div class="card border-0 text-center">
+    <div class="card-body">
+      <h6>Nuevo personaje</h6>
+      <form class="mt-4" autocomplete="off" [formGroup]="formularioHeroe" (ngSubmit)="guardarHeroe()">
+        <table class="table table-borderless">
+          <tr>
+            <label for="nombre" class="col-xs-4">Nombre: </label>
+            <input type="text" class="form-control" id="nombre" name="nombre" formControlName="nombre">
+          </tr>
+          <tr>
+            <label for="descipcion" class="col-xs-4">Descripcion: </label>
+            <textarea type="text" class="form-control" id="descripcion" name="descripcion" formControlName="descripcion"></textarea>
+          </tr>
+          <tr>
+            <label for="imagen" class="col-xs-4">Imagen: </label>
+            <input type="text" class="form-control" id="imagen" name="imagen" formControlName="imagen">
+          </tr>
+        </table>
+        <div class="mt-3">
+          <button [disabled]="!formularioHeroe.valid" class="btn btn-primary mr-3" >
+            <i class="far fa-save"></i> Guardar
+          </button>
+          <button type="button" class="btn btn-primary" (click)="cambiarEstado(false)">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
