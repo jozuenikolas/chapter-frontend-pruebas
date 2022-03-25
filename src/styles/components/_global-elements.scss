@@ -1,0 +1,35 @@
+@import '../variables';
+@import '../mixins';
+/*
+* Elements used throughout the whole app
+* 
+* Contents:
+* 
+* 1. Horizontal Break line
+* 2. Buttons
+*/
+
+/*
+* 1. Horizontal break line
+*/
+.break.horizontal {
+  background: $colorGreyLight;
+  width: 100%;
+  height: 1px;
+  margin: 24px 0 20px 0;
+  @include breakpoint('large') {
+    margin: 40px 0;
+  }
+}
+
+/*
+* 2. Buttons
+*/
+.ghost {
+  background: transparent;
+  border: none;
+  color: $colorBlueInfo;
+  &:hover {
+    text-decoration: underline;
+  }
+}
