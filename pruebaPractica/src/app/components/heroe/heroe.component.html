@@ -1,0 +1,43 @@
+<h2>
+    <strong>
+        <label class="navbar-label">Listado de personajes</label>
+    </strong>
+</h2>
+
+<nav class="navbar">
+    <input placeholder="Buscar" class="navbar-text" (keyup.enter)="buscarHeroe(buscarTexto.value)" #buscarTexto>&nbsp;&nbsp;
+    <button class="navbar-button" (click)="crearHeroe()">Nuevo</button>
+</nav>
+
+<div>
+    <hr>
+    <input placeholder="Nombre" class="navbar-text">
+    <input placeholder="Descripcion" class="navbar-text">
+    <input placeholder="Imagen" class="navbar-text"><br>
+    <button class="navbar-button" (click)="guardarHeroe()">Guardar</button>&nbsp;&nbsp;
+    <button class="navbar-button" (click)="cancelarHeroe()">Cancelar</button>
+
+</div>
+
+<div>
+    <div *ngFor="let heroe of listaHeroes; let i = index">
+        <article>
+            <h2>
+                <strong>
+                    <span>{{heroe.title}}</span>
+                </strong>
+            </h2>
+            <div>
+                <div>
+                    <img alt="" class="image" src={{heroe.image}}>
+                    <button class="button">Editar</button>&nbsp;&nbsp;
+                    <button class="button">Eliminar</button>
+                </div>
+                <div>
+                    {{heroe.body}}
+                </div>
+                <hr/>
+            </div>
+        </article>
+    </div>
+</div>
