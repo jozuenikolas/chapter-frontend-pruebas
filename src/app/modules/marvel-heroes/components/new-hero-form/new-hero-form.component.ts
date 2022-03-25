@@ -38,26 +38,34 @@ export class NewHeroFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.hero);
     this.hero.title = this.heroTitle;
     this.hero.body = this.heroBody;
     this.hero.image = this.heroImage;
     console.log(this.hero);
-    this.heroesService.postNewMarvelHero(this.hero).subscribe(
-      (data) => {
-        alert('creado exitosamente');
-        this.onCancel();
-      },
-      (error) => {
-        alert('Error al crear registro');
-      }
-    );
+    if (this.heroName == 'new') {
+      this.heroesService.postNewMarvelHero(this.hero).subscribe(
+        (data) => {
+          alert('creado exitosamente');
+          this.router.navigate(['/']);
+        },
+        (error) => {
+          alert('Error al crear registro');
+        }
+      );
+    } else {
+      this.heroesService.updateMarvelHero(this.hero).subscribe(
+        (data) => {
+          alert('actualizado exitosamente');
+          this.router.navigate(['/']);
+        },
+        (error) => {
+          alert('Error al actualizar registro');
+        }
+      );
+    }
   }
 
   onCancel() {
     this.router.navigate(['/']);
-  }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 }
