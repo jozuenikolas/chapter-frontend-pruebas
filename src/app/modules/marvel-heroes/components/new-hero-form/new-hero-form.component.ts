@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MarvelHero } from '@app/data/models/marvelHero';
+import { HeroesService } from '@app/services/marvel.service';
 
 @Component({
   selector: 'app-new-hero-form',
@@ -16,8 +17,15 @@ export class NewHeroFormComponent implements OnInit {
     title: 'hulk',
     body: 'super fuerte',
     image: 'https://i.pravatar.cc/300',
+    category: 'main',
+    createdAt: '2022-03-03T01:37:01.828Z',
+    updatedAt: '2022-03-03T01:37:01.828Z',
   };
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private heroesService: HeroesService
+  ) {}
 
   ngOnInit() {
     this.getParamsRoute();
@@ -27,6 +35,16 @@ export class NewHeroFormComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log(this.hero);
+    this.heroesService.postNewMarvelHero(this.hero).subscribe(
+      (data) => {
+        console.log('creado exitosamente', data);
+        this.onCancel();
+      },
+      (error) => {
+        alert('Error al crear registro');
+      }
+    );
     //   this.routesActivitiesService.postNewActivity(this.model).subscribe(
     //     (data) => {
     //       this.snackBar.openFromComponent(SnackBarCustomCreateMessage, {
@@ -41,7 +59,7 @@ export class NewHeroFormComponent implements OnInit {
   }
 
   onCancel() {
-    this.router.navigate(['../'], { relativeTo: this.route });
+    this.router.navigate(['/']);
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

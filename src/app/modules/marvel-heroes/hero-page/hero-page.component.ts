@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MarvelHero } from '@app/data/models/marvelHero';
 import { HeroesService } from '@app/services/marvel.service';
 
@@ -11,13 +12,13 @@ export class HeroPageComponent implements OnInit {
   marvelHeroes: MarvelHero[] = [];
   marvelFilteredHeroes: MarvelHero[] = [];
   searchText: string = '';
-  constructor(private heroesService: HeroesService) {
+  constructor(private heroesService: HeroesService, private router: Router) {
     this.getPageData();
   }
 
   ngOnInit(): void {}
   getPageData() {
-    this.heroesService.getAllHeroesList(1).subscribe((listScore) => {
+    this.heroesService.getAllHeroesList().subscribe((listScore) => {
       this.marvelHeroes = listScore;
       this.marvelFilteredHeroes = listScore;
     });
@@ -29,5 +30,9 @@ export class HeroPageComponent implements OnInit {
         .toLowerCase()
         .includes(this.searchText.toLowerCase());
     });
+  }
+
+  createNew() {
+    this.router.navigate(['/new']);
   }
 }
