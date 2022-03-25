@@ -1,0 +1,96 @@
+<p>{{mensajeError}}</p>
+
+<h1>Lista de superheroes</h1>
+<table>
+  <tr>
+
+    <th>
+
+      <div>
+        <div style="display: flex">
+          <h4 style="margin: 2px">Ingresar nombre a Buscar:</h4>
+          <input type="text" #titulo />
+        </div>
+        <button
+          (click)="
+      getAvengerTitle(
+        '54',
+        titulo.value
+      )
+    "
+        >
+          Buscar
+        </button>
+
+
+
+        <table>
+          <tr>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+
+          </tr>
+          <tr *ngFor="let avenger of avengers; let i = index">
+            <th>
+              <div>
+                <img src="{{ avenger.image }}">
+              </div>
+            </th>
+            <th>{{ avenger.title }}</th>
+            <th>{{ avenger.body }}</th>
+          </tr>
+        </table>
+      </div>
+
+
+    </th>
+    <th>
+
+      <div>
+        <h2 style="text-align: center">Añadir</h2>
+        <div style="display: flex">
+          <h4 style="margin: 2px">nombre:</h4>
+          <input type="text" #nombre />
+        </div>
+        <br />
+        <div style="display: flex">
+          <h4 style="margin: 2px">descripcion:</h4>
+          <input type="text" #descripcion />
+        </div>
+        <br />
+        <div style="display: flex">
+          <h4 style="margin: 2px">imagen:</h4>
+          <input type="text" #url />
+        </div>
+        <br />
+        <button
+          (click)="
+      addNewAvenger(
+        nombre.value,
+        descripcion.value,
+        url.value
+      )
+    "
+        >
+          Añadir
+        </button>
+      </div>
+
+    </th>
+
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
