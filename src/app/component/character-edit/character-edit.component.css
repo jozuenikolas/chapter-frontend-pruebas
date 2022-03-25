@@ -1,0 +1,28 @@
+.container-edit {
+    border: 1px solid #DEE3ED;
+    margin-bottom: 24px;
+    border-radius: 4px;
+    background: white;
+    padding: 24px 16px;
+}
+
+.group-marvel {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.group-btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+.container-form {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+.input-form {
+   height: 24px;
+}

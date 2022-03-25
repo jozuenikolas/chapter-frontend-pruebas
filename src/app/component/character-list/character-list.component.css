@@ -1,0 +1,48 @@
+.container-marvel {
+    width: 100%;
+}
+
+.container-search {
+    display: flex;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 32px;
+}
+
+.mr-marvel-8 {
+    margin-right: 8px;
+}
+
+
+.input-marvel {
+    height: 26px;
+    width: 17rem;
+}
+
+.container-img {
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+.container-btn-img {
+    display: flex;
+    justify-content: center;
+}
+
+.wmarvel-100 {
+    width: 100%;
+    border-bottom-right-radius: 32px;
+}
+
+.action-label {
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.btn-action {
+    height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: beige;
+    border: 1px solid burlywood;
+}
