@@ -1,0 +1,43 @@
+<div class="container-edit">
+  <label class="title-marvel">Nuevo personaje</label>
+  <form [formGroup]="frmMarvel">
+    <div class="container-form">
+      <div class="group-marvel">
+        <label>Nombre:</label>
+        <input class="input-form" formControlName="name" required />
+      </div>
+
+      <div class="group-marvel">
+        <label>Descripción:</label>
+        <textarea
+          class="input-form"
+          formControlName="description"
+          required
+          placeholder="Descripción"
+        >
+        </textarea>
+      </div>
+
+      <div class="group-marvel">
+        <label>Imagen:</label>
+        <input
+          class="input-form"
+          formControlName="image"
+          placeholder="URL"
+          required
+        />
+      </div>
+
+      <div class="group-btn">
+        <button
+          class="btn-marvel"
+          (click)="onClickSaveSubmit()"
+          style="margin-right: 8px"
+        >
+          Guardar
+        </button>
+        <button (click)="onClickCancel()" class="btn-marvel">Cancelar</button>
+      </div>
+    </div>
+  </form>
+</div>

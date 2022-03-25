@@ -1,0 +1,42 @@
+<div class="container-marvel">
+  <label class="title-marvel">Listado de Personajes </label>
+
+  <div class="container-search">
+    <div class="mr-marvel-8">
+      <input
+        class="input-marvel"
+        (keyup.enter)="onClickSearch()"
+        placeholder="Buscar"
+      />
+    </div>
+    <div>
+      <button class="btn-marvel" (click)="onClickNew()">Nuevo</button>
+    </div>
+  </div>
+
+  <app-character-edit
+    *ngIf="showEdit"
+    (onReloadListCharacter)="onClickReaload()"
+    (hideComponentEdit)="onClickCancel()"
+  >
+  </app-character-edit>
+
+  <div class="container-img" *ngFor="let item of listCharater">
+    <img class="wmarvel-100" src="{{ item.image }}" alt="{{ item.body }}" />
+    <div>
+      <div class="action-label">
+        <label>{{ item.title }}</label>
+      </div>
+      <div class="container-btn-img">
+        <div style="padding-right: 8px">
+          <button class="btn-action" (click)="onClickEdit()">Editar</button>
+        </div>
+        <div>
+          <button class="btn-action" (click)="onClickDelete(item._id)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
