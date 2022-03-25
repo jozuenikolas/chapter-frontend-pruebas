@@ -1,0 +1,21 @@
+<div class="container1">
+
+    <h3 class="title">Lista de personsajes</h3>
+
+    <div class="search-section">
+        <input type="text" placeholder="Buscar" [(ngModel)]="search" (ngModelChange)="onChangeSearch()">
+        <input type="button" value="Nuevo" class="btn-primary1" (click)="onAdd()">
+    </div>
+
+    <app-add-edit-personajes *ngIf="showAddEdit" [personaje]="personaje" (cancel)="onCancel()" (save)="onSubmit()">
+    </app-add-edit-personajes>
+
+    <div class="section-personaje col" *ngFor="let personaje of searchPersonajes;let i = index">
+        <img src="{{personaje.image}}" [alt]="personaje.title" width="100%" height="350px">
+
+        <label class="text-info" for="">{{personaje.title}}</label>
+        <br><br>
+        <input type="button" value="Edit" class="btn-action" (click)="onEdit(i)">
+        <input type="button" value="Delete" class="btn-action" (click)="onDelete(i)">
+    </div>
+</div>

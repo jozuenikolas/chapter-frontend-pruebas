@@ -1,0 +1,28 @@
+<form [formGroup]="formPj" action="" (ngSubmit)="onSubmit()" validate>
+    <h3 class="title">{{personaje._id? "Editar ":"Nuevo "}} personaje</h3>
+    <div>
+        <label for="">Nombre:</label>
+        <input type="text" [ngClass]="formPj.controls['title'].invalid ? 'border border-danger':''"
+            formControlName="title">
+    </div>
+    <br>
+    <div>
+        <label for="">Descripción:</label>
+        <textarea type="text" [ngClass]="formPj.controls['body'].invalid ? 'border border-danger':''"
+            formControlName="body" rows="3"></textarea>
+    </div>
+    <br>
+    <div>
+        <label for="">Imagen:</label>
+        <input type="text" placeholder="URL" [ngClass]="formPj.controls['image'].invalid ? 'border border-danger':''"
+            formControlName="image">
+    </div>
+    <br>
+    <div class="inline">
+
+    </div>
+    <div class="section-buttons">
+        <input type="submit" value="Guardar" class="btn-primary1 mx" [disabled]="!formPj.valid">
+        <input type="button" value="Cancelar" class="btn-primary1 mx" (click)="onCancel()">
+    </div>
+</form>
