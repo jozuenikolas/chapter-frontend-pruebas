@@ -1,0 +1,13 @@
+#busqueda {
+    height: 200px;
+    border:solid;
+    border-color: rgba(238, 238, 238, 0.959);
+    background-color:  rgba(238, 238, 238, 0.959);
+  }
+
+  #nuevo {
+    height: 300px;
+    border:solid;
+    border-color: rgba(238, 238, 238, 0.959);
+    background-color:  rgba(238, 238, 238, 0.959);
+  }

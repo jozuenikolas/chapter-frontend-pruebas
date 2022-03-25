@@ -1,0 +1,42 @@
+<h4>Nuevo <small> personaje </small></h4>
+<hr>
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+  <div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre:</label>
+      <div class="col">
+        <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre"
+          [class.is-invalid]="nombreNoValido">
+        <small *ngIf="nombreNoValido" class="text-danger">
+          Ingrese 5 letras
+        </small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Descripcion:</label>
+      <div class="col">
+        <input class="form-control" type="textarea" placeholder="Descripcion" formControlName="descripcion">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Imagen:</label>
+      <div class="col">
+        <input class="form-control" type="text" placeholder="URL" formControlName="url">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col">
+      <button type="submit" class="btn tituloBuscar btn-block">
+        Guardar
+      </button>
+    </div>
+    <div class="input-group col">
+      <button type="submit" class="btn tituloBuscar btn-block">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</form>
