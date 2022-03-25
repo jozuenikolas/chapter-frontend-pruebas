@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
+import { HeroeServiceService, Heroe} from '../servicios/heroe-service.service'
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,10 @@ import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @ViewChild ('buscarTexto') buscarTexto!:ElementRef;
+  @ViewChild ('buscarTexto') buscarTexto!:ElementRef; 
+  public listaHeroes: Array<any>=[];
 
-  constructor() { }
+  constructor(private heroeService: HeroeServiceService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +25,10 @@ export class NavbarComponent implements OnInit {
 
   buscarHeroe(termino:string){
     console.log('Buscar con: '+termino);
+    this.heroeService.obtenerBusquedaHeroe(termino).subscribe((res: any)=> {
+      this.listaHeroes=res;
+      console.log(this.listaHeroes);
+    });
 
   }
 
