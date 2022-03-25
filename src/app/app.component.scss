@@ -5,6 +5,7 @@
 .page-container {
   margin: 5rem;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .heroes-container {
@@ -23,7 +24,6 @@
   box-sizing: border-box;
   padding: 0 4rem;
 
-
   button {
     margin: 12px 20px;
     margin-left: 1rem;
@@ -39,4 +39,8 @@
     border: none;
     cursor: pointer;
   }
+}
+
+h1 {
+  color: grey;
 }
