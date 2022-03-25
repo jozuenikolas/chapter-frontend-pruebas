@@ -1,0 +1,42 @@
+<h1>Nuevo Personaje</h1>
+     <table>
+       <tr>
+        
+         <td>
+          <label>Nombre: </label> 
+          <input type="text" 
+                 placeholder="Nombre"
+                 [(ngModel)]="nuevoPersonaje.title">
+        </td>
+       </tr>
+        <tr>         
+          <td>
+            <label>Descripción: </label>
+            <input type="text" 
+                   placeholder="Descripción"
+                   [(ngModel)]="nuevoPersonaje.body"
+                   ></td>
+        </tr>
+        <tr>          
+          <td>
+            <label>Imagen: </label>
+            <input type="text" 
+                   placeholder="URL"
+                   [(ngModel)]="nuevoPersonaje.image"
+                   >
+          </td>
+        </tr>
+     </table>
+     <table>
+       <tr>
+         <td>
+           <button  
+            (onclick)="guardarNuevoPersonaje()">
+            Guardar</button>
+          </td>
+         <td>
+           <button>Cancelar</button>
+          </td>
+      </tr>
+     </table>
+ 
