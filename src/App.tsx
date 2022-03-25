@@ -141,7 +141,7 @@ function App() {
               </button>
             )}
 
-            <button id="searchButton" onClick={() => handleCancel}>
+            <button id="searchButton" onClick={handleCancel}>
               <MdOutlineCancel /> Cancelar
             </button>
           </div>
