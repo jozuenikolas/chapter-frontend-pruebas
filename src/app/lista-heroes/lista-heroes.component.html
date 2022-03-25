@@ -1,0 +1,8 @@
+<div class="title2"><h2>Lista Super Heroes</h2></div>
+<div id="listaHeroes">
+    <div class="tarjetaListaSH bkDeg" *ngFor="let heroe of heroes">
+        <div class="fotoHeroe"><img  alt="Foto Heroe" height="100%" width="100%" src="{{heroe.image}}"></div>
+        <hr>
+        <strong>{{heroe.title}}</strong>
+    </div>
+</div>
