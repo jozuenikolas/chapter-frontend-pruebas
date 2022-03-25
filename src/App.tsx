@@ -27,6 +27,7 @@ function App() {
   const [characterDescription, setCharacterDescription] = useState<string>("");
   const [characterImage, setCharacterImage] = useState<string>("");
   const [update, setUpdate] = useState<string>("");
+  const [invalid, setInvalid] = useState<boolean>(true);
 
   const handleCancel = () => {
     setAddCharacter(false);
@@ -91,6 +92,16 @@ function App() {
       .then((response) => setCharacter(response.data));
   }, []);
 
+  useEffect(() => {
+    if (
+      characterName !== "" &&
+      characterImage !== "" &&
+      characterDescription !== ""
+    ) {
+      setInvalid(false);
+    }
+  }, [characterName, characterImage, characterDescription]);
+
   return (
     <div className="mainContainer">
       <h2 className="title">Listado de personajes</h2>
@@ -132,7 +143,11 @@ function App() {
 
           <div className="options">
             {update === "" ? (
-              <button id="searchButton" onClick={handleAddCharacter}>
+              <button
+                id="searchButton"
+                onClick={handleAddCharacter}
+                disabled={true}
+              >
                 <AiOutlineSave /> Guardar
               </button>
             ) : (
