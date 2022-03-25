@@ -15,4 +15,8 @@ export class MarvelService {
   public getListMarvel() {
     return this._httP.get(`${environment.apiUrl}${Endpoints.GET_LIST_MARVEL}${environment.idAuthor}`)
   }
+
+  public getMarvel(name: string) {
+    return this._httP.get(`${environment.apiUrl}${Endpoints.GET_LIST_MARVEL}${environment.idAuthor}`+'&title='+`${name}`)
+  }
 }

@@ -8,6 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './shared/card/card.component';
+import { FormDataComponent } from './components/form-data/form-data.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { HttpClientModule } from '@angular/common/http';
     BaseComponent,
     HomeComponent,
     HeaderComponent,
-    BodyComponent
+    BodyComponent,
+    CardComponent,
+    FormDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   exports: [

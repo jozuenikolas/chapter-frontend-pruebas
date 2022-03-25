@@ -1,5 +1,6 @@
 <div class="home">
-    <app-header class="home__header"></app-header>
-    <app-body></app-body>
+    <app-header class="home__header" (openFormDataBoolean)="changeValueFormData($event)" (dataSearch)="dataSearch($event)"></app-header>
+    <app-form-data *ngIf="valueFormData" [title]="titleNew"></app-form-data>
+    <app-body [listMarvel]="dataS"></app-body>
 </div>
 
