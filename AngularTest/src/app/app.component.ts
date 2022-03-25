@@ -10,56 +10,77 @@ import { Model } from './Model';
 })
 export class AppComponent implements OnInit {
   title = 'AngularTest';
-  public MarvelData:Model[]=[]
-  newmodel:Model={
+  public MarvelData: Model[] = []
+  newmodel: Model = {
     title: "",
- body:  "",
- image:  "",
- category:  "",
- createdAt: new Date().toString(),
- updatedAt: new Date().toString(),
-     
+    body: "",
+    image: "",
+    category: "",
+    createdAt: new Date().toString(),
+    updatedAt: new Date().toString(),
+
   }
 
-  constructor(private _marvelService:MarvelService){}
-ngOnInit(): void {
-  this._marvelService.getMarvel().subscribe(data=>this.MarvelData=data)
-}
-
-  Marvelget(){
-    this._marvelService.getMarvel().subscribe(data=>this.MarvelData=data)
+  constructor(private _marvelService: MarvelService) { }
+  ngOnInit(): void {
+    this._marvelService.getMarvel().subscribe(data => this.MarvelData = data)
   }
 
-  create(f:NgForm){
-    this.newmodel=f.form.getRawValue()
+  Marvelget() {
+    this._marvelService.getMarvel().subscribe(data => this.MarvelData = data)
+  }
+
+  create(f: NgForm) {
+    this.newmodel = f.form.getRawValue()
     console.log(f.form.getRawValue())
     console.log(f.value.Nombre)
 
-    let newCharacter:Model = {
-       title:f.value.Nombre,
- body:  f.value.Descripcion,
- image:  f.form.value.Imagen,
- category:   "main",
- createdAt: new Date().toString(),
- updatedAt: new Date().toString(),
+    let newCharacter: Model = {
+      title: f.value.Nombre,
+      body: f.value.Descripcion,
+      image: f.form.value.Imagen,
+      category: "main",
+      createdAt: new Date().toString(),
+      updatedAt: new Date().toString(),
     }
     this._marvelService.saveCharacter(newCharacter).subscribe()
     f.reset()
   }
 
 
-  Actualizar(ff:Model){
-    this._marvelService.Actualizar(this.newmodel).subscribe()
+  Actualizar(f: Model) {
+
+
+    let newCharacter: Model = {
+      id: f.id,
+      title: f.title,
+      body: f.category,
+      image: f.image,
+      category: "main",
+      createdAt: new Date().toString(),
+      updatedAt: new Date().toString(),
+    }
+
+    this._marvelService.Actualizar(newCharacter).subscribe()
 
   }
 
-  Borrar(ff:Model){
-    this._marvelService.Borrar(this.newmodel).subscribe()
+  Borrar(f: Model) {
+    let newCharacter: Model = {
+      id: f.id,
+      title: f.title,
+      body: f.category,
+      image: f.image,
+      category: "main",
+      createdAt: new Date().toString(),
+      updatedAt: new Date().toString(),
+    }
+    this._marvelService.Borrar(newCharacter).subscribe()
   }
 
-  
 
-  SearchForm(f:NgForm){
+
+  SearchForm(f: NgForm) {
 
   }
 }
