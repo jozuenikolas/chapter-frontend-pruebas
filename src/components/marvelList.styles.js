@@ -14,10 +14,10 @@ export default StyleSheet.create({
   actionsContainer: {
     backgroundColor: "#000",
     width: "100%",
+    alignItems: "center",
   },
   title: {
     color: "#fff",
-    textAlign: "center",
     fontWeight: "bold",
   },
 });
