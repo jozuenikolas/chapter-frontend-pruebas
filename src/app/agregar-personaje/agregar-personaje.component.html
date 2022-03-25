@@ -1,0 +1,35 @@
+<h1>Nuevo Personaje</h1>
+<div>
+    <div class="commonText">
+        <label>Nombre</label>
+        <input type="text" [(ngModel)]="character.title" placeholder="Nombre">
+    </div>
+    <div class="commonText">
+        <label>Descripción</label>
+        <input type="text" [(ngModel)]="character.body" placeholder="Descripcion">
+    </div>
+    <div class="commonText">
+        <label>Imagen</label>
+        <input type="text" [(ngModel)]="character.image" placeholder="Imagen">
+    </div>
+
+    <div class="commandContainer">
+        <div class="commandoRow">
+            <div class="commandObject">
+                <div class="iconedButton">
+                    <button (click)="save()">Guardar</button>
+                    <i class="fa fa-save fa-lg"></i>
+                </div>
+            </div>
+            <div class="commandSeparator">
+                &nbsp;
+            </div>
+            <div class="commandObject">
+                <div class="iconedButton">
+                    <button (click)="cancel()">Cancelar</button>
+                    <i class="fa fa-remove fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

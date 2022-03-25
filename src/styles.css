@@ -1,0 +1,99 @@
+html { 
+    height:100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-color: #eaedef;
+}
+
+.container{
+ padding: 10px;
+}
+
+ h1{ 
+    margin: 0px;
+    font-size: 24px;
+    color: dimgrey;
+    text-align: center;
+}
+
+.iconedText, .iconedButton, .iconedButtonAlt, .commonText {
+    position: relative;
+}
+
+.iconedText i, .iconedButton i{
+    position: absolute;
+    left: 15px;
+}
+
+ .iconedButtonAlt i{
+    position: absolute;
+    left: 52.5px;
+}
+
+.iconedText i{
+    top: 20px;
+    color: gray;
+}
+
+.iconedButton i{
+    top: 12px;
+    color: white;
+}
+
+.iconedButtonAlt i{
+    top: 12px;
+    color: #ed0716;
+}
+
+.iconedText input[type=text], .commonText input[type=text]{ 
+    width: 100%; 
+    margin: 8px 0; 
+    display: inline-block; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+}
+
+
+.iconedText input[type=text]{ 
+    padding: 12px 40px; 
+}
+
+.commonText input[type=text]{ 
+    padding: 12px 10px; 
+}
+
+.iconedButton button, .iconedButtonAlt button{
+    height: 40px;  
+    font-size: 14px;
+    font-weight: bold;
+    width: 125px;
+    border-radius: 6px;
+    padding-left: 15px;
+}
+
+.iconedButton button{
+    background-color: #ed0716;
+    color: white;
+}
+
+.iconedButtonAlt button{
+    background-color: whitesmoke;
+    color: #ed0716;
+}
+
+@media only screen
+    and (min-device-width: 375px)
+    and (max-device-height: 667px)
+    and (-webkit-device-pixel-ratio: 2) { }
+            
+@media only screen
+    and (min-device-width: 414px)
+    and (max-device-height: 736px)
+    and (-webkit-device-pixel-ratio: 3) { }

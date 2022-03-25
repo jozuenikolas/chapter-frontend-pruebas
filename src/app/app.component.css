@@ -1,0 +1,54 @@
+/*html { 
+    height:100%;  
+}
+
+body {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-color: #eaedef;
+}
+
+.container{
+ padding: 10px;
+}
+
+:host ::ng-deep h1{
+    height: 18px;
+    color: dimgrey;
+}
+
+:host ::ng-deep .fontuser {
+            position: relative;
+        }
+          
+        :host ::ng-deep .fontuser i{
+            position: absolute;
+            left: 15px;
+            top: 40px;
+            color: gray;
+        }
+
+:host ::ng-deep input[type=text], 
+        :host ::ng-deep input[type=password] { 
+            width: 100%; 
+            padding: 12px 40px; 
+            margin: 8px 0; 
+            display: inline-block; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box; 
+        }
+
+
+@media only screen
+    and (min-device-width: 375px)
+    and (max-device-height: 667px)
+    and (-webkit-device-pixel-ratio: 2) { }
+            
+@media only screen
+    and (min-device-width: 414px)
+    and (max-device-height: 736px)
+    and (-webkit-device-pixel-ratio: 3) { }
+*/

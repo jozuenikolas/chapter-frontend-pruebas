@@ -1,0 +1,23 @@
+.commandContainer {
+  display: table;         
+  background-color: transparent;
+  margin: auto;
+}
+
+.commandContainer .commandoRow {
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+
+.commandContainer .commandoRow .commandSeparator {
+  float: left;
+  display: table-column;         
+  width: 15px;
+}
+
+.commandContainer .commandoRow .commandObject {
+  float: left;
+  display: table-column;         
+  width: 125px;
+}

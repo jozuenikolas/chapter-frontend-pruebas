@@ -1,0 +1,49 @@
+<h1>Listado de personajes</h1>
+<div>
+    <table class="tblContainer">
+        <tr>
+            <td>
+                <div class="iconedText">
+                    <input type="text" [formControl]='search' placeholder="Buscar">
+                    <!--<input type="text" [(ngModel)]="filter" placeholder="Buscar">-->
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
+            </td>
+            <td class="tdCommand">
+                <div class="iconedButton">
+                    <button (click)="add()">Nuevo</button>
+                    <i class="fa fa-search fa-lg"></i>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div *ngFor="let c of characters" class="container">
+        <img [src]="c.image" />
+        <br />
+        <br />
+        <h2>{{c.title}}</h2>
+        <br />
+        <div class="commandContainer">
+            <div class="commandoRow">
+                <div class="commandObject">
+                    <div class="iconedButtonAlt">
+                        <button (click)="edit(c._id)">&nbsp;</button>
+                        <i class="fa fa-edit fa-lg"></i>
+                    </div>
+                </div>
+                <div class="commandSeparator">
+                    &nbsp;
+                </div>
+                <div class="commandObject">
+                    <div class="iconedButtonAlt">
+                        <button (click)="delete(c)">&nbsp;</button>
+                        <i class="fa fa-trash fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="characters.length === 0">
+        <h2>No se encontro heroes</h2>
+    </div>
+</div>
