@@ -1,0 +1,109 @@
+<table>
+
+<div>
+  <th align = "center" colspan="2">Añadir personaje</th>
+   
+  <tr>
+<td>
+    <h4 style="margin: 2px">Nombre:</h4>
+  </td>
+  <td>
+  <input type="text" #title />
+</td>
+  </tr> 
+  
+  <tr>
+
+    <td>
+      <h4 style="margin: 2px">Descripción</h4>
+
+    </td>
+
+    <td>
+      <input type="text" #body />
+
+    </td>
+  </tr>
+    
+    
+  <tr>
+
+    <td>
+      <h4 style="margin: 2px">URl imagen</h4>
+    </td>
+    <td>
+      <input type="text" #image />
+    </td>
+  </tr>
+ 
+  <tr>
+    <td>
+      <h4 style="margin: 2px">Categoria</h4>
+    </td>
+    <td>
+      <input type="text" #category />
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <h4 style="margin: 2px">Fecha creación</h4>
+    </td>
+    <td>
+      <input type="date" #createdAt />
+    </td>
+  </tr>
+ 
+  <tr>
+    <td>
+      <h4 style="margin: 2px">Fecha actualización</h4>
+    </td>
+    <td>
+      <input type="date" #updatedAt />
+    </td>
+  </tr>
+ <tr>
+  
+  <td colspan= 2 align="center" >
+  <button 
+    (click)="
+    addPersonaje(
+
+       title.value,
+       body.value,
+       image.value,
+       category.value,
+       convertToDate(createdAt.value),
+       convertToDate(updatedAt.value)
+      )
+    "
+  >
+  
+    Añadir
+  </button>
+</td>
+</tr>
+</div>
+</table>
+
+
+<h1>PERSONAJES MARVEL</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Imagen</th>
+    <th>Opciones</th>
+  </tr>
+  <tr *ngFor="let personaje of personajes; let i = index">
+    
+    
+    <th>{{ personaje.title }}</th>
+    <th>{{ personaje.body }}</th>
+    <th><img src={{personaje.image}}></th>
+    <th><button (click)="deletePersonaje(personaje._id)">Eliminar</button></th>
+
+    
+  </tr>
+</table>
