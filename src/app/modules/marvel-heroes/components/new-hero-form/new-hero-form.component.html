@@ -1,14 +1,15 @@
 <div class="w-full max-w-xs">
   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <h2 class="text-xl font-bold">Nuevo Personaje {{ heroName }}</h2>
+    <h2 class="text-xl font-bold">Nuevo Personaje</h2>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
         Nombre
       </label>
       <input
+        [(ngModel)]="heroTitle"
         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="name"
         type="text"
+        name="search"
         placeholder="name"
       />
     </div>
@@ -18,8 +19,9 @@
       </label>
       <input
         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="description"
+        [(ngModel)]="heroBody"
         type="text"
+        name="search"
         placeholder="descripción"
       />
     </div>
@@ -29,8 +31,9 @@
       </label>
       <input
         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        id="imageSrc"
         type="text"
+        name="search"
+        [(ngModel)]="heroImage"
         placeholder="Imagen"
       />
     </div>
@@ -51,6 +54,6 @@
     </div>
   </form>
   <p class="text-center text-gray-500 text-xs">
-    &copy;2020 Acme Corp. All rights reserved.
+    &copy2020 Acme Corp. All rights reserved.
   </p>
 </div>

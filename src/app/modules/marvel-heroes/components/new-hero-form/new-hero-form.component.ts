@@ -10,6 +10,9 @@ import { HeroesService } from '@app/services/marvel.service';
 })
 export class NewHeroFormComponent implements OnInit {
   heroName: string = '';
+  heroTitle: string = '';
+  heroBody: string = '';
+  heroImage: string = '';
 
   private subscription: any;
 
@@ -36,26 +39,19 @@ export class NewHeroFormComponent implements OnInit {
 
   onSubmit() {
     console.log(this.hero);
+    this.hero.title = this.heroTitle;
+    this.hero.body = this.heroBody;
+    this.hero.image = this.heroImage;
+    console.log(this.hero);
     this.heroesService.postNewMarvelHero(this.hero).subscribe(
       (data) => {
-        console.log('creado exitosamente', data);
+        alert('creado exitosamente');
         this.onCancel();
       },
       (error) => {
         alert('Error al crear registro');
       }
     );
-    //   this.routesActivitiesService.postNewActivity(this.model).subscribe(
-    //     (data) => {
-    //       this.snackBar.openFromComponent(SnackBarCustomCreateMessage, {
-    //         duration: 4000,
-    //       });
-    //       this.onReturn();
-    //     },
-    //     (error) => {
-    //       this.showErrorMessage('Error al crear registro');
-    //     }
-    //   );
   }
 
   onCancel() {
