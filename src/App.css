@@ -1,0 +1,91 @@
+.mainContainer {
+  padding: 20px;
+}
+input {
+  height: 35px;
+}
+button {
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  place-content: center;
+}
+
+svg {
+  margin-right: 10px;
+}
+
+#searchButton {
+  background-color: red;
+  color: white;
+  font-size: large;
+}
+
+/* cardddddddddd------------------- */
+.card {
+  background-color: black;
+  margin-bottom: 15px;
+}
+.character-image {
+  width: 100%;
+}
+
+.character-name {
+  color: white;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  place-content: space-evenly;
+  padding-bottom: 15px;
+}
+
+.card .options svg {
+  margin-right: 00px;
+}
+
+.option {
+  width: 30%;
+}
+
+/* icon color */
+.options path {
+  color: red;
+}
+
+/* searchbar */
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.searchBar input {
+  width: 65%;
+}
+
+/* add or edit component  */
+.container {
+  padding: 25px;
+  margin-bottom: 30px;
+  border-style: groove;
+}
+.container .title {
+  text-align: center;
+}
+.container input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container textarea {
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+.container .options path {
+  color: white;
+}
