@@ -1,0 +1,21 @@
+<h1>Listado de personajes</h1>
+<br>
+<div class="row pad-top-20">
+    <div class="col-12">
+        <div class="row pull-right">
+            <div class="input-group col-md-12">
+                <span class="input-group-prepend">
+                    <button class="btn btn-outline-secondary border-right-0 border btn-color"
+                     type="button" (click)="buscarPersonaje(idTxt.value)">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                <input class="form-control py-2 border-left-0 border" type="text" #idTxt required
+                    placeholder="Buscar...">
+                <button class="tituloBuscar btn btn-block" type="button">
+                    Nuevo
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

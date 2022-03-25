@@ -1,0 +1,18 @@
+.tituloBuscar {
+    font-family: "Prelo-Book";
+    font-size: 14pt;
+    line-height: pt;
+    color: #f5f6f7;
+    background-color: red;
+}
+
+  .btn-color{
+    background-color:white;
+    color: #a52f6a!important;
+  }
+  
+  :host::ng-deep.mat-icon-button {
+    color: #002561!important;
+  }
+  
+  
