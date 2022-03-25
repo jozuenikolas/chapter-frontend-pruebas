@@ -1,0 +1,16 @@
+<div class="card">
+    <div>
+        <div class="card__img">
+            <img [src]="img" [alt]="name">
+        </div>
+        <div class="card__actions">
+            <div>
+                <h5 class="card__actions__name">{{name}}</h5>
+            </div>
+            <div class="card__actions__buttons">
+                <button class="card__actions__buttons__height card__actions__buttons__space"><i class="fas fa-edit icon"></i></button>
+                <button class="card__actions__buttons__height" (click)="delete()"><i class="fas fa-archive icon"></i></button>
+            </div>
+        </div>
+    </div>
+</div>

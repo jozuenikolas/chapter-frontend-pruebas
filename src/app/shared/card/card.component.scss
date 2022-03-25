@@ -1,0 +1,51 @@
+.card {
+    background-color: var(--backgroung-card-black);
+    margin-bottom: 12px;
+    width: 100%;
+    min-width: 366px;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+
+    &__img {
+        width: 100%;
+        min-width: 366px;
+        max-width: 900px;
+    }
+
+    &__actions {
+
+        &__name {
+            margin: 8px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-with);
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 358px;
+            max-width: 900px;
+            padding: 0 12px 8px 12px;
+
+            &__height {
+                height: 48px;
+                width: 100%;
+                min-width: 50px;
+                max-width: 900px;
+                cursor: pointer;
+            }
+
+            &__space {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+
+.icon {
+    color: red;
+}

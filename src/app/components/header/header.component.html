@@ -1,0 +1,9 @@
+<div class="header">
+    <div>
+        <h3 class="header__title">{{title}}</h3>
+        <div class="header__search">
+            <input type="text" class="header__search__input" placeholder="Buscar" [(ngModel)]="text" (keypress)="pressEvent($event)">
+            <button class="header__search__button" (click)="openFormData()">+ Nuevo</button>
+        </div>
+    </div>
+</div>
