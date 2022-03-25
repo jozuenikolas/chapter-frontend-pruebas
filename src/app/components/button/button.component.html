@@ -1,0 +1,8 @@
+<button
+  class="btn"
+  [ngClass]="{ 'btn--danger': classDanger, 'btn--opacity': disabled }"
+  (click)="handledEmit()"
+>
+  <img [src]="iconImage" alt="icon" />
+  <span *ngIf="text" class="btn__text">{{ text }}</span>
+</button>

@@ -1,0 +1,47 @@
+@import "../../../../colors.scss";
+
+.character-list {
+  &__character {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+  }
+  &__title {
+    color: $title;
+  }
+  &__action {
+    display: grid;
+    width: 300px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 578px) {
+  .character-list {
+    &__character {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .character-list {
+    &__character {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .character-list {
+    width: 1220px;
+    margin: 0 auto;
+    &__character {
+      grid-gap: 16px;
+    }
+  }
+}

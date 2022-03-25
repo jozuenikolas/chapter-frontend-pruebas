@@ -1,0 +1,48 @@
+<div class="character-create">
+  <h2>Nuevo Personaje</h2>
+  <form [formGroup]="characterForm">
+    <div class="character-create__input">
+      <label>Nombre:</label>
+      <input type="text" placeholder="Jovi" formControlName="name" />
+      <span class="character-create__text-error" *ngIf="fieldIsValid('name')">
+        Campo no valido
+      </span>
+    </div>
+    <div class="character-create__input">
+      <label>Descripción:</label>
+      <textarea
+        type="text"
+        placeholder="Descripción..."
+        formControlName="description"
+      ></textarea>
+      <span
+        class="character-create__text-error"
+        *ngIf="fieldIsValid('description')"
+      >
+        Campo no valido
+      </span>
+    </div>
+    <div class="character-create__input">
+      <label>Url:</label>
+      <input type="text" placeholder="http://..." formControlName="url" />
+      <span class="character-create__text-error" *ngIf="fieldIsValid('url')">
+        Campo no valido
+      </span>
+    </div>
+    <div class="character-create__actions">
+      <app-button
+        text="Guardar"
+        [icon]="icons.SAVE"
+        [disabled]="characterForm.invalid"
+        type="OK"
+        (handleEmit)="save($event)"
+      ></app-button>
+      <app-button
+        text="Cancelar"
+        [icon]="icons.CLOSE"
+        type="CANCEL"
+        (handleEmit)="save($event)"
+      ></app-button>
+    </div>
+  </form>
+</div>

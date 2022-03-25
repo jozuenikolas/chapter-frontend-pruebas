@@ -1,0 +1,20 @@
+@import "../.././../colors.scss";
+
+.btn {
+  min-width: 130px;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    margin-left: 16px;
+    color: white;
+  }
+  &--danger {
+    background-color: $btn-red;
+  }
+  &--opacity {
+    opacity: 0.5;
+  }
+}
