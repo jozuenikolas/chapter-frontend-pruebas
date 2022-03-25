@@ -1,0 +1,55 @@
+<h1>Listado de personajes</h1>
+
+<div class="container__header">
+    <div class="input-wrapper">
+        <input #in (keyup)="searchKey(in.value)" (change)="searchKey(in.value)" type="text" class="input"
+            placeholder="Buscar...">
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd" />
+        </svg>
+    </div>
+    <button (click)="show()" class="button__header"><i class="fas fa-plus"></i>Nuevo</button>
+</div>
+
+<div class="grid">
+
+    <form *ngIf="showForm" class="card__form" [formGroup]="marvelForm" (ngSubmit)="save()" novalidate>
+        <h2>{{title}}</h2>
+        <div class="input__container">
+            <label for="">Nombre:</label>
+            <input type="text" formControlName="title" class="jc__input" placeholder="Nombre">
+        </div>
+        <div class="input__container">
+            <label for="">Descripcion:</label>
+            <input type="text" class="jc__input" formControlName="body" placeholder="Descripcion">
+        </div>
+
+        <div class="input__container">
+            <label for="">Imagen:</label>
+            <input type="text" formControlName="image" class="jc__input" placeholder="Imagen">
+        </div>
+
+        <div class="container__button">
+            <button type="submit" [ngClass]="marvelForm.invalid  ? 'button__header_disabled' : 'button__header'"
+                [disabled]="marvelForm.invalid"><i class="fas fa-save"></i>Guardar</button>
+            <button (click)="cancel()" type="button" class="button__header"><i
+                    class="fas fa-times"></i>Cancelar</button>
+        </div>
+    </form>
+    <div class="card" *ngFor="let heroMarvel of herosMarvel">
+        <img [src]="heroMarvel.image" alt="Avatar" style="width:100%">
+        <div class="container">
+            <h4 class="text__center"><b>{{heroMarvel.title}}</b></h4>
+            <div class="container__button">
+                <button class="button" (click)="formEdit(heroMarvel)"><i class="fas fa-pencil-alt button_icon"></i>
+                </button>
+                <button class="button" (click)="delete(heroMarvel._id)"><i class="fas fa-trash"></i></button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

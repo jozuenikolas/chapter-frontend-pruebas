@@ -1,0 +1,136 @@
+.container {
+  padding: 2px 16px;
+}
+h1 {
+  color: rgb(107, 105, 103);
+}
+h2 {
+  color: rgb(107, 105, 103);
+  text-align: center;
+}
+.jc__input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.jc__input:focus {
+  border: 3px solid rgb(221, 34, 34);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: rgb(22, 22, 22);
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card__form {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+}
+.card__form:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  border-radius: 5px 5px 0 0;
+}
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.text__center {
+  text-align: center;
+  color: aliceblue;
+}
+
+.container__button {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+.button {
+  width: 7rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  i {
+    color: rgb(175, 40, 40);
+  }
+}
+
+.button__header {
+  background-color: rgb(221, 34, 34);
+  color: aliceblue;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border-color: rgb(221, 34, 34);
+  i {
+    color: white;
+    padding-right: 1rem;
+  }
+}
+
+.button__header_disabled {
+  background-color: rgb(182, 126, 126);
+  color: aliceblue;
+  width: 9rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  border-color: rgb(182, 126, 126);
+  i {
+    color: white;
+    padding-right: 1rem;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 200px;
+}
+
+.input {
+  box-sizing: border-box;
+  color: rgb(107, 105, 103);
+  padding: 15px 15px 15px 35px;
+  width: 100%;
+}
+
+.input-icon {
+  color: rgb(107, 105, 103);
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.container__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.input__container {
+  margin: 1rem;
+}
