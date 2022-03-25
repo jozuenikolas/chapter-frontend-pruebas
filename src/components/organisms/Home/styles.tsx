@@ -3,6 +3,12 @@ import styled from 'styled-components';
 export const HomeWrapper = styled.div`
   padding: 0 2rem;
 
+  .title {
+    font-family: sans-serif;
+    color: gray;
+    font-size: 28px;
+  }
+
   .main {
     min-height: 100vh;
     padding: 4rem 0;
@@ -29,27 +35,6 @@ export const HomeWrapper = styled.div`
     flex-grow: 1;
   }
 
-  .title a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-
-  .title a:hover,
-  .title a:focus,
-  .title a:active {
-    text-decoration: underline;
-  }
-
-  .title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
-  }
-
-  .title,
-  .description {
-    text-align: center;
-  }
 
   .description {
     margin: 4rem 0;

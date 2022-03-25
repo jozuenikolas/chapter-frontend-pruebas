@@ -13,13 +13,4 @@ describe('Home Component', () => {
   test('Should render HomeWrapper', () => {
     expect(wrapper.find('styles__HomeWrapper').length).toBe(1)
   })
-
-  test('Should show a listo of characters from json', () => {
-    for( let char of data.results ) {
-
-      console.log(char);
-      // console.log(wrapper.text().html())
-      expect(wrapper.find('li')).toBe(char.name)
-    }
-  })
 })

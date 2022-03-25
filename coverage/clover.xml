@@ -1,26 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1648188452095" clover="3.2.0">
-  <project timestamp="1648188452095" name="All files">
-    <metrics statements="9" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="2" elements="14" coveredelements="9" complexity="0" loc="9" ncloc="9" packages="2" files="2" classes="2"/>
-    <package name="components.organisms.Home">
-      <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-      <file name="index.tsx" path="C:\Users\root\Documents\smw\pichincha-test\src\components\organisms\Home\index.tsx">
-        <metrics statements="7" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+<coverage generated="1648230352255" clover="3.2.0">
+  <project timestamp="1648230352255" name="All files">
+    <metrics statements="51" coveredstatements="13" conditionals="11" coveredconditionals="0" methods="16" coveredmethods="2" elements="78" coveredelements="15" complexity="0" loc="51" ncloc="51" packages="7" files="10" classes="10"/>
+    <package name="components.atoms.Character">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="index.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\atoms\Character\index.tsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+      <file name="style.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\atoms\Character\style.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.MarvelBody">
+      <metrics statements="26" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="index.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\molecules\MarvelBody\index.tsx">
+        <metrics statements="25" coveredstatements="1" conditionals="10" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="15" count="2" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+      </file>
+      <file name="style.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\molecules\MarvelBody\style.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules.NewCharacter">
+      <metrics statements="8" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="index.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\molecules\NewCharacter\index.tsx">
+        <metrics statements="7" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+      </file>
+      <file name="style.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\molecules\NewCharacter\style.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.organisms.Home">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\components\organisms\Home\index.tsx">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
       </file>
     </package>
     <package name="pages">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="C:\Users\root\Documents\smw\pichincha-test\src\pages\index.tsx">
+      <file name="index.tsx" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\pages\index.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="shared">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="interfaces.ts" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\shared\interfaces.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="shared.hooks">
+      <metrics statements="7" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="useForm.js" path="C:\Users\root\Documents\prueba-pichincha\chapter-frontend-pruebas\src\shared\hooks\useForm.js">
+        <metrics statements="7" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="3" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
       </file>
     </package>
   </project>
