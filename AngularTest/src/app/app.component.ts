@@ -31,9 +31,19 @@ ngOnInit(): void {
   }
 
   create(f:NgForm){
-    this.newmodel=f.value
-    console.log(f.value)
-    this._marvelService.saveCharacter(this.newmodel).subscribe()
+    this.newmodel=f.form.getRawValue()
+    console.log(f.form.getRawValue())
+    console.log(f.value.Nombre)
+
+    let newCharacter:Model = {
+       title:f.value.Nombre,
+ body:  f.value.Descripcion,
+ image:  f.form.value.Imagen,
+ category:   "main",
+ createdAt: new Date().toString(),
+ updatedAt: new Date().toString(),
+    }
+    this._marvelService.saveCharacter(newCharacter).subscribe()
     f.reset()
   }
 

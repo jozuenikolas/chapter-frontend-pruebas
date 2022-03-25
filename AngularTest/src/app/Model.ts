@@ -1,4 +1,5 @@
 export interface Model{
+id?:string,
  title: string,
  body: string,
  image: string,
