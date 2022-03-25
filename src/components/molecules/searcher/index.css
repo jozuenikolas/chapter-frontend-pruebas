@@ -1,0 +1,10 @@
+.searcher {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  width: 340px;
+}
+
+.searcher-input {
+  flex-grow: 3;
+}
