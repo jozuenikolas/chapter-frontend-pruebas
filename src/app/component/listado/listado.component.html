@@ -1,0 +1,50 @@
+
+
+<h1>Lista de personajes</h1>
+
+
+<table>
+    <tr>
+       <th>ID</th>
+      <th>Titulo</th>
+      <th>Body</th>
+      <th>Autor</th>
+      <th>Imagen</th>
+      <th>Categoria</th> 
+  
+      <th>CreatedAt</th>
+      <th>Update</th>
+  
+    </tr>
+  
+    <tr *ngFor="let personaje of personajes; let i = index">
+     <th>{{personaje._id}}</th>
+      <th>{{ personaje.title }}</th>
+      <th>{{ personaje.body }}</th>
+      <th>{{ personaje.id_autor }}</th>
+       <th>{{ personaje.imagen }}</th>
+      <th>{{ personaje.category }}</th>
+  
+      <th>{{ personaje.createdAt }}</th>
+      <th>{{ personaje.updatedAt }}</th> 
+    </tr>
+  </table>
+
+
+<button
+      (click)="
+      agregar(
+          _id.value,
+          title.value,
+          body.value,
+          id_autor.value,
+          imagen.value,
+          category.value,
+          createdAt.value,
+          updatedAt.value
+        )
+      "
+
+<button (click)="borrar">Borrar personaje</button>
+
+<button (click)="buscar">Buscar personaje</button>
