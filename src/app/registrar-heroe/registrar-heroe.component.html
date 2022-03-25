@@ -1,0 +1,17 @@
+<div class="formularioHeroe">
+    <h3 style="text-align: center;">Agregar H&eacute;roe</h3>
+    <hr>
+    <form (ngSubmit)="onSubmit()">
+        <div style="display:block;">
+            <label>Nombre</label>
+            <input type="text" id="title" [(ngModel)]="heroe.title" name="title" >
+            <label>Descripci&oacute;n</label><input type="text" id="body" [(ngModel)]="heroe.body" name="body" >
+            <label>Foto</label><input type="text" id="title" [(ngModel)]="heroe.image" name="image" >
+            <label>Categor&iacute;a</label><input type="text" id="category" [(ngModel)]="heroe.category" name="category" >
+            <label>Fecha Creaci&oacute;n</label><input type="text" id="createdAt" [(ngModel)]="heroe.createdAt" name="createdAt"  >
+            <label>Fecha Modificaci&oacute;n</label><input type="text" id="updatedAt" [(ngModel)]="heroe.updatedAt" name="updatedAt" >
+        </div>
+        <button>Guardar</button>
+    </form>
+
+</div>>
