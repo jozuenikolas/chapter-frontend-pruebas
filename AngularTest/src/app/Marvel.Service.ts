@@ -24,11 +24,11 @@ export class MarvelService{
         return this.http.post<Model>(this.url,character);
      }
    
-     updateCharacter(character:any){
+     Actualizar(character:any){
         return this.http.put(`https://bp-marvel-api.herokuapp.com/marvel-characters/${character._id}?idAuthor=${character.idAuthor}`,character)
      }
    
-     deleteCharacter(character:any){
+     Borrar(character:any){
        return this.http.delete(`https://bp-marvel-api.herokuapp.com/marvel-characters/${character._id}?idAuthor=${character.idAuthor}`);
      }
 

@@ -38,16 +38,18 @@ ngOnInit(): void {
   }
 
 
+  Actualizar(ff:Model){
+    this._marvelService.Actualizar(this.newmodel).subscribe()
+
+  }
+
+  Borrar(ff:Model){
+    this._marvelService.Borrar(this.newmodel).subscribe()
+  }
+
+  
+
   SearchForm(f:NgForm){
 
-  }
-
-
-  Actualizar(){
-
-  }
-
-  Borrar(){
-    
   }
 }
