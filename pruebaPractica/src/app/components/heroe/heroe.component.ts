@@ -27,8 +27,19 @@ export class HeroeComponent implements OnInit {
     });
   }
 
-  buscarHeroe(){
+  crearHeroe(){
+  }
+  cancelarHeroe(){
+  }
 
+  guardarHeroe(){}
+
+  buscarHeroe(termino:string){
+    console.log('Buscar con: '+termino);
+    this.heroeService.obtenerBusquedaHeroe(termino).subscribe((res: any)=> {
+      this.listaHeroes=res;
+      console.log(this.listaHeroes);
+    });
   }
 
 }

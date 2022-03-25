@@ -42,3 +42,57 @@
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
 }
+
+.navbar-label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar-text {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 10px;
+    align-items: center;
+    padding-left: 8px;
+    height: 30px;
+    border: 1px solid #fa6400;
+    border-radius: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar-button {
+    display: inline-block;
+    align-items: center;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    line-height: 1.25;
+    margin: 0;
+    padding: calc(.500rem - 1px) calc(1.5rem - 1px);
+    text-decoration: none;
+    transition: all 250ms;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar-button:hover,
+.navbar-button:focus {
+    background-color: #fb8332;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.navbar-button:hover {
+    transform: translateY(-1px);
+}
+
+.navbar-button:active {
+    background-color: #c85000;
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}
