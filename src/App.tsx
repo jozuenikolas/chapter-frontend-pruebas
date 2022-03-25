@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import axios from "axios";
 import {
@@ -22,11 +21,68 @@ interface character {
 }
 
 function App() {
-  const [search, setSearch] = useState<string>();
-  const [character, setCharacter] = useState<character[]>([]);
   const [addCharacter, setAddCharacter] = useState<boolean>(false);
+  const [character, setCharacter] = useState<character[]>([]);
+  const [characterName, setCharacterName] = useState<string>("");
+  const [characterDescription, setCharacterDescription] = useState<string>("");
+  const [characterImage, setCharacterImage] = useState<string>("");
+  const [update, setUpdate] = useState<string>("");
 
-  const handleSearch = () => {};
+  const handleCancel = () => {
+    setAddCharacter(false);
+    setCharacterName("");
+    setCharacterDescription("");
+    setCharacterImage("");
+  };
+  const handleAddCharacter = async () => {
+    await axios
+      .post(
+        "https://bp-marvel-api.herokuapp.com/marvel-characters",
+        {
+          title: characterName,
+          body: characterDescription,
+          image: characterImage,
+          category: "main",
+        },
+        { params: { idAuthor: "60" } }
+      )
+      .then(() => alert("Personaje añadido exitosamente"))
+      .catch((e) => alert(e.response.data.message));
+  };
+
+  const handleDelete = async (characterId: string) => {
+    await axios
+      .delete(
+        "https://bp-marvel-api.herokuapp.com/marvel-characters/" + characterId,
+        { params: { idAuthor: "60" } }
+      )
+      .then(() => alert("Personaje eliminado exitosamente"));
+  };
+
+  const handlePut = async () => {
+    await axios
+      .put(
+        "https://bp-marvel-api.herokuapp.com/marvel-characters/" + update,
+        {
+          title: characterName,
+          body: characterDescription,
+          image: characterImage,
+          category: "main",
+        },
+        { params: { idAuthor: "60" } }
+      )
+      .then(() => alert("Personaje actualizado exitosamente"))
+      .catch((e) => alert(e.response.data.message));
+  };
+
+  const handleUpdate = async (character: character) => {
+    setAddCharacter(true);
+    setCharacterName(character.title);
+    setCharacterDescription(character.body);
+    setCharacterImage(character.image);
+    window.scrollTo(0, 0);
+    setUpdate(character._id);
+  };
 
   useEffect(() => {
     axios
@@ -40,30 +96,56 @@ function App() {
       {/* searchBar */}
       <div className="searchBar">
         <input placeholder="Buscar" />
-        <button id="searchButton">
+        <button id="searchButton" onClick={() => setAddCharacter(true)}>
           <AiOutlinePlus /> Nuevo
         </button>
       </div>
 
       {/* Add or eddit component */}
-      <div className="container">
-        <h2 className="title">Nuevo personaje</h2>
-        <label>Nombre:</label>
-        <input type="text" />
-        <label>Descripción:</label>
-        {/* <input type="text" aria-multiline={true} placeholder="Descripción" /> */}
-        <textarea cols={38} rows={3}></textarea>
-        <label>Imagen:</label>
-        <input type="text" placeholder="URL" />
-        <div className="options">
-          <button id="searchButton">
-            <AiOutlineSave /> Guardar
-          </button>
-          <button id="searchButton">
-            <MdOutlineCancel /> Cancelar
-          </button>
+      {addCharacter && (
+        <div className="container">
+          <h2 className="title">Nuevo personaje</h2>
+
+          <label>Nombre:</label>
+          <input
+            type="text"
+            value={characterName}
+            onChange={(e) => setCharacterName(e.target.value)}
+          />
+
+          <label>Descripción:</label>
+          <textarea
+            cols={38}
+            rows={3}
+            value={characterDescription}
+            onChange={(e) => setCharacterDescription(e.target.value)}
+          />
+
+          <label>Imagen:</label>
+          <input
+            type="text"
+            placeholder="URL"
+            value={characterImage}
+            onChange={(e) => setCharacterImage(e.target.value)}
+          />
+
+          <div className="options">
+            {update === "" ? (
+              <button id="searchButton" onClick={handleAddCharacter}>
+                <AiOutlineSave /> Guardar
+              </button>
+            ) : (
+              <button id="searchButton" onClick={handlePut}>
+                <AiOutlineSave /> Actualizar
+              </button>
+            )}
+
+            <button id="searchButton" onClick={() => handleCancel}>
+              <MdOutlineCancel /> Cancelar
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Card */}
       {character.map((character, i) => {
@@ -76,10 +158,16 @@ function App() {
             />
             <h3 className="character-name">{character.title}</h3>
             <div className="options">
-              <button className="option">
+              <button
+                className="option"
+                onClick={() => handleUpdate(character)}
+              >
                 <AiFillEdit />
               </button>
-              <button className="option">
+              <button
+                className="option"
+                onClick={() => handleDelete(character._id)}
+              >
                 <AiOutlineDelete />
               </button>
             </div>

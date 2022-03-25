@@ -71,6 +71,7 @@ svg {
 .container {
   padding: 25px;
   margin-bottom: 30px;
+  border-style: groove;
 }
 .container .title {
   text-align: center;
