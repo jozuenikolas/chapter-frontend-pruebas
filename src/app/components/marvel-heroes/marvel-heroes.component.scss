@@ -1,0 +1,46 @@
+*:not(i) {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding: 0.4em 3em;
+  min-height: calc(100vh - 56px);
+  min-width: 575px;
+}
+
+.title {
+  width: 100%;
+  overflow-wrap: break-word;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.header {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  grid-gap: 1em 40em;
+
+}
+
+.search-input {
+  flex-grow: 1;
+  min-width: 17px;
+}
+
+.add-button {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+
+.cards{
+  margin-top: 20px;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  grid-gap: 5em 5.80em;
+}
+
+

@@ -1,0 +1,82 @@
+<div class="container ">
+  <h1 class="title">{{titleForm}}</h1>
+
+  <form [formGroup]="marvelHeroFormGroup" (ngSubmit)="onSubmit()">
+
+    <div class="form-control ">
+      <label for="inputTitle">Nombre *</label>
+      <input id="inputTitle" type="text"
+             [ngClass]="title?.errors && title?.touched ? 'is-invalid':''"
+             formControlName="title">
+      <div class="errors"
+           *ngIf="title?.invalid && (title?.dirty || title?.touched)">
+        <div *ngIf="title?.errors?.['required']">
+          El nombre es requerido.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label for="inputBody">Descripción *</label>
+      <textarea id="inputBody" rows="3"
+                [ngClass]="body?.errors && body?.touched ? 'is-invalid':''"
+                formControlName="body"></textarea>
+      <div class="errors"
+           *ngIf="body?.invalid && (body?.dirty || body?.touched)">
+        <div *ngIf="body?.errors?.['required']">
+          La descripción es requerida.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-control">
+      <label for="inputImage">Imagen *</label>
+      <input id="inputImage" type="text" placeholder="URL"
+             [ngClass]="image?.errors && image?.touched ? 'is-invalid':''"
+             formControlName="image">
+      <div class="errors"
+           *ngIf="image?.invalid && (image?.dirty || image?.touched)">
+        <div *ngIf="image?.errors?.['required']">
+          La imagen es requerida.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-control">
+      <label class="form-label" for="selectCategory">Categoría *</label>
+      <select id="selectCategory" class=""
+              [ngClass]="category?.errors && category?.touched ? 'is-invalid':''"
+              formControlName="category">
+        <option value="" selected>Seleccione una opción</option>
+        <option value="main">Main</option>
+        <option value="secondary">Secondary</option>
+      </select>
+      <div class="errors"
+           *ngIf="category?.invalid && (category?.dirty || category?.touched)">
+        <div *ngIf="category?.errors?.['required']">
+          Debe seleccionar una categoría.
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button [disabled]="marvelHeroFormGroup.invalid"
+              type="submit"
+              class="button-24"
+              style="width: 200px">
+        <i class="fa fa-save" style="margin-right: 10px"></i>
+        Guardar
+      </button>
+
+      <button routerLink="/marvel-heroes"
+              class="button-24"
+              style="width: 200px">
+        <i class="fa fa-ban" style="margin-right: 10px"></i>
+        Cancelar
+      </button>
+    </div>
+
+  </form>
+</div>

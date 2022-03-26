@@ -1,0 +1,28 @@
+<div class="card ">
+  <img src="{{cardContent.image}}"
+       alt="{{cardContent.title}}"
+       width="540px"
+       height="614px">
+
+  <h2 class="title">{{cardContent.title}}</h2>
+
+  <h4 class="category">{{cardContent.category | titlecase}}</h4>
+
+  <p class="body">{{cardContent.body}}</p>
+
+  <div class="buttons">
+    <button (click)="onEditClick(cardContent.title)"
+            class="button-6"
+            style="width: 200px">
+      <i class="fas fa-pen"></i>
+    </button>
+
+    <button (click)="onDeleteClick(cardContent._id)"
+            class="button-6"
+            style="width: 200px">
+      <i class="fas fa-trash"></i>
+    </button>
+
+  </div>
+
+</div>

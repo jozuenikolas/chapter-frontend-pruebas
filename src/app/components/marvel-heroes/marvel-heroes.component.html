@@ -1,0 +1,37 @@
+<div class="container" *ngIf="cards$|async; else spinner">
+
+  <h1 class="title">Listado de personajes</h1>
+
+
+  <div class="header">
+    <input ngDefaultControl
+           [(ngModel)]="searchText"
+           class="search-input"
+           placeholder="Buscar">
+
+    <button [routerLink]="'/create-marvel-hero'"
+            class="add-button button-24">
+      <i class="fas fa-plus" style="margin-right: 10px"></i>
+      Nuevo
+    </button>
+  </div>
+
+  <div class="cards">
+
+    <app-card-marvel-hero *ngFor="let card of cards$ | async | filterMarvelHeroes:searchText"
+                          [cardContent]="card"
+                          (emitUpdateCards)="updateCards($event)">
+    </app-card-marvel-hero>
+
+  </div>
+
+
+</div>
+
+<ng-template #spinner>
+  <div style="display: flex; justify-content: center; align-items: center; min-height: 300px;">
+    <div class="spinner"></div>
+  </div>
+</ng-template>
+
+

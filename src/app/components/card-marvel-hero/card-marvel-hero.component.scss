@@ -1,0 +1,35 @@
+.border {
+  border: 1px solid #dc3545
+}
+
+.card {
+  padding: 1em;
+  background-color: black;
+  border-bottom-right-radius: 3em;
+
+}
+
+.title {
+  text-align: center;
+  color: #eeeeee;
+}
+
+.category{
+  text-align: center;
+  color: #eeeeee;
+}
+
+.body {
+  color: #eeeeee;
+  width: 540px;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+i{
+  font-size: 20px;
+}
