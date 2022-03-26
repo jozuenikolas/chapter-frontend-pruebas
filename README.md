@@ -9,16 +9,16 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 ## Screenshots
-###Dos cards por fila
+### Dos cards por fila
 <p style="align-items: center"><img src="./images/img.png" alt=""></img></p>
 
-###Una card por fila
+### Una card por fila
 <p style="align-items: center"><img src="./images/img_1.png" alt=""></img></p>
 
-###Formulario por defecto
+### Formulario por defecto
 <p style="align-items: center"><img src="./images/img_2.png" alt=""></img></p>
 
-###Formulario con errores
+### Formulario con errores
 <p style="align-items: center"><img src="./images/img_3.png" alt=""></img></p>
 ## Code scaffolding
 
